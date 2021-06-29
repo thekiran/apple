@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link, animateScroll as scroll } from "react-scroll";
 // import gsap, { Bounce } from 'gsap'
 
 const Header = () => {
@@ -60,10 +61,46 @@ const Header = () => {
         {/*End of Logo */}
         {/* Navbar */}
         <nav className="navbar">
-          <a href="#section-2" className="navbar-link">Features</a>
-          <a href="#section-3" className="navbar-link">MacBook Air</a>
-          <a href="#section-3" className="navbar-link">Watch</a>
-          <a href="#section-4" className="navbar-link">AirPods</a>
+
+        <Link
+            activeClass="active"
+            to="section-2"
+            spy={true}
+            smooth={true}
+            offset={-20}
+            duration={250}
+            className="navbar-link"
+        > Iphone 12</Link>
+          {/* <a href="#section-2" className="navbar-link">Features</a> */}
+          <Link
+            activeClass="active"
+            to="section-3"
+            spy={true}
+            smooth={true}
+            offset={0}
+            duration={500}
+            className="navbar-link"
+        > MacBook Air</Link>
+          {/* <a href="" className="navbar-link"></a> */}
+          <Link
+            activeClass="active"
+            to="section-4"
+            spy={true}
+            smooth={true}
+            offset={-70}
+            duration={500}
+            className="navbar-link"
+        > Watch</Link>
+          <Link
+            activeClass="active"
+            to="section-5"
+            spy={true}
+            smooth={true}
+            offset={-70}
+            duration={500}
+            className="navbar-link"
+        > AirPods</Link>
+          {/* <a href="#section-4" className="navbar-link">AirPods</a> */}
         </nav>
         {/* End of Navbar */}
         {/* Cube */}
@@ -71,7 +108,7 @@ const Header = () => {
         <div className="cube-wrapper">
           <div className="cube">
             <div className="front-side">
-              <img alt="iphone" src="/images/iphone.png" />
+              <img alt="iphone" src="https://raw.githubusercontent.com/thekiran/applestore-assets/main/Final%20Files/images/iphone.png" />
             </div>
             <div className="back-side center">
               <i className="fab fa-apple" />

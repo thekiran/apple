@@ -68,6 +68,7 @@ html {
   margin: 0 3rem;
   color: var(--black-color);
   transition: transform 0.5s;
+  cursor: pointer;
 }
 
 .navbar-link:hover {
@@ -360,7 +361,7 @@ display: flex;
 /* Section 2 */
 .section-2 {
   width: 100%;
-  height: 80vh;
+  height: auto;
   padding: 10vh 0;
   display: flex;
   /* flex-direction: r; */
@@ -373,7 +374,7 @@ display: flex;
 
 .section-2 .iphone-description{
   position: absolute;
-  top: 25%;
+  top: 60%;
   left: 15%;
   font-size: 5rem;
   width: 500px;
@@ -387,6 +388,8 @@ display: flex;
   color: var(--black-color);
   position: relative;
   margin-bottom: 5rem;
+  margin: 10vh 0 0 0;
+
  /* background: red; */
 }
 
@@ -419,6 +422,8 @@ display: flex;
   margin-top: -0px; */
   /* background: red; */
   padding-top: 7em;
+  height: 600px;
+  width: 270px;
 }
 /* Section 2 Images */
 .iphones {
@@ -503,6 +508,8 @@ display: flex;
   flex-direction: column;
   padding: 15rem 0;
   clip-path: polygon(68% 0, 100% 0, 100% 97%, 38% 100%, 0 100%, 0 3%);
+  margin: 15vh 0;
+
 }
 
 /* Section 3 Heading */
@@ -544,13 +551,15 @@ display: flex;
   top: 6%;
   width: 60%;
   height: 85%;
-  background: linear-gradient(
+  background: 
+  linear-gradient(
       rgba(255, 255, 255, 0.6),
       rgba(255, 255, 255, 0.6)
     ),
     url(./images/MacBook/macbook-1-desktop.png) center no-repeat;
   z-index: -1;
   opacity: 0;
+  transition: all 1s
 }
 
 .change .loading-wrapper {
@@ -609,13 +618,32 @@ display: flex;
   width: 70rem;
   text-align: center;
   opacity: 0;
+  /* height: 100%; */
+  top: 25%;
+  background-color: rgba(0, 0, 0, 0.05);
 }
 
+.macbook-info:hover + .loading-wrapper{
+  /* background: rgb(0, 0, 0); */
+}
+
+.macbook-info.anim:hover .macbook-btn{
+  width: 45rem;
+  height: 10rem;
+  
+}
 .change .macbook-info {
   opacity: 1;
   transition: opacity 1s 6s;
+  /* background: red; */
 }
-
+.change .macbook-info.anim:hover{
+ transform: scale(1.25);
+ transition: transform 250ms ease-in;
+}
+.change .macbook-info:hover .macbook-price{
+  /* color: #fff; */
+}
 .macbook-info-heading {
   font-size: 6rem;
   font-weight: 400;
@@ -640,6 +668,11 @@ display: flex;
   letter-spacing: 0.2rem;
   color: var(--primary-color);
   cursor: pointer;
+  margin: 3em 0
+}
+
+.macbook-btn:hover{
+  color:#000
 }
 /* End of Section 3 Info */
 /* End of Section 3 Content */
@@ -776,6 +809,8 @@ display: flex;
   font-weight: 300;
   color: var(--white-color);
   text-shadow: 0.1rem 0.1rem 0 #999;
+  /* background-color: #a5babd; */
+  z-index: 2;
 }
 /* End of Section 5 Heading */
 
@@ -784,6 +819,28 @@ display: flex;
   width: 50%;
   height: 100%;
   object-fit: contain;
+  transition: width 100ms ease-in;
+  perspective: 100px;
+}
+
+.airpods img:hover{
+  width: 90%;
+  /* transform: scaleY(1.5); */
+}
+/* .airpods img:hover .airpods-buttons{
+  width: 400px;
+  background: rgba(0, 0, 0, 0.486);
+} */
+
+.airpods-img-1:hover ~ .airpods-buttons{
+  width: 700px;
+  /* margin-left: 100px; */
+  /* margin-right: 3em !important; */
+  /* background: rgba(0, 0, 0, 0.486); */
+}
+.airpods-img-2:hover ~ .airpods-buttons{
+  width: 700px;
+  /* background: rgba(0, 0, 0, 0.486); */
 }
 
 .airpods-img-2 {
@@ -798,6 +855,10 @@ display: flex;
   left: 50%;
   transform: translate(-50%, -50%);
   margin-top: 5rem;
+  display: flex;
+  justify-content: space-between;
+  z-index: 15;
+  cursor: pointer;
 }
 
 .airpods-btn {
@@ -808,7 +869,6 @@ display: flex;
   border: none;
   border-radius: 0.5rem;
   color: var(--white-color);
-  cursor: pointer;
 }
 
 .airpods-btn:last-child {
@@ -831,9 +891,15 @@ display: flex;
 }
 
 .icon-link img {
-  width: 10rem;
+  width: 15em;
 }
 
+.icon-link img:hover{
+  opacity: .5;
+  cursor: pointer;
+  transform: translate(-5px) scale(90%);
+  transition: all 250ms ease;
+}
 .copyright {
   position: absolute;
   bottom: 5rem;

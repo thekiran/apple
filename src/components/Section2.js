@@ -3,57 +3,29 @@ import gsap from 'gsap'
 
 const Section2 = () => {
   React.useEffect(()=>{
-    // gsap.timeline({
-    //   scrollTrigger:{
-    //     trigger:'.section-2-heading',
-    //     start:"top center",
-    //     end:"top top",
-    //     // markers:true,
-    //     scrub:false,
-    //     pin:false, 
-    //     pinSpacing:false
-    //   }
-    // })
-    // gsap.from(".section-2-heading-bg",{xPercent:-300,yPercent:-100,duration:1,scrollTrigger:{trigger:'.section-2-heading'}},1)
-    // gsap.from(".section-2-title",{color:'#fff',duration:3,scrollTrigger:{trigger:'.section-2-heading'}},1)
-    
-    // .from("#iphone-full",{xPercent:-300,yPercent:-100,scale:3,duration:1},1)
-    // .to("#banner-cont",{xPercent:200,yPercent:-100,scale:2,rotate:45,opacity:0.1,duration:3,delay:2},1)
-    
-    // const scaleBg = () => {
-      
-    //   let t2 = gsap.timeline({
-    //     scrollTrigger:{
-    //       trigger:'.section-2-heading',
-    //       start:"top center",
-    //       end:"top top",
-    //       markers:true,
-    //       scrub:true,
-    //       pin:true, 
-    //       pinSpacing:false
-    //     }
-    //   })
-    //   .to(".section-2-heading-bg",{skewX:"50deg",opacity:1,scale:50,duration:2,delay:1},1)
-    //   .to(".section-2-heading-bg",{skewX:"0deg",opacity:0,scale:0,duration:2,delay:2},1)
-    //   // .from(".iphone-description",{xPercent:-220,yPercent:90,opacity:0,scale:5,rotate:'-90deg',duration:2,delay:1,onComplete:scaleBg()},1)
-    // }
+    const opacity = 0
+
      let t1 = gsap.timeline({
       scrollTrigger:{
         trigger:'.section-2-heading',
         start:"top center",
-        end:"top top",
-        markers:true,
+        end:"+=300",
+        // markers:true,
         scrub:true,
-        pin:true, 
-        pinSpacing:false
+        pin:false, 
+        pinSpacing:true
       }
     })
-    .from("#iphone-full",{xPercent:-220,yPercent:90,opacity:0,scale:5,rotate:'-90deg',duration:2,delay:1},1)
-    .from(".iphone-description",{xPercent:-220,yPercent:90,opacity:0,scale:5,rotate:'-90deg',duration:2,delay:1},1)
-    // .to(".iphone-description",{opacity:1,duration:1},1)
-
-
+    .from(".section-2-title",{xPercent:82,yPercent:-5,opacity:opacity,duration:1,
+  },1)
+    .from(".section-2-heading-bg",{xPercent:110,yPercent:-50,duration:1,scaleY:0.5,opacity:.5
+    } ,1)
+    .from("#iphone-full",{xPercent:-170,yPercent:-5,opacity:opacity,scale:0.5,rotate:'-0deg',duration:1.5,delay:.5},1)
+    .from(".iphone-description",{xPercent:50,yPercent:-0,opacity:opacity,scale:0.4,rotate:'-0deg',duration:1.5,delay:1.5},1)
+    
   },[])
+
+
     return (
         <React.Fragment>
            {/* Section 2 */}
@@ -65,7 +37,7 @@ const Section2 = () => {
             {/* Section 2 Heading */}
             <h1 className="section-2-heading">
             <span className="section-2-heading-bg"></span>
-            <span className="section-2-title">
+            <span className="section-2-title" style={{display:'inline-block'}}>
             iPhone 12
             </span>
             </h1>
@@ -73,7 +45,7 @@ const Section2 = () => {
             {/* End of Section 2 Buttons */}
           <div className="iphone-full-cont">
             <div className="iphone-img">
-            <img id="iphone-full"  src="/images/iPhones/front.png" alt="" />
+            <img id="iphone-full"  src="https://raw.githubusercontent.com/thekiran/applestore-assets/main/Final%20Files/images/iPhones/front.png" alt="" />
             </div>
           </div>
           </section>
