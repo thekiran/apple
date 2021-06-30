@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/apple/static/css/main.82374798.chunk.css",
-    "main.js": "/apple/static/js/main.63756543.chunk.js",
-    "main.js.map": "/apple/static/js/main.63756543.chunk.js.map",
-    "runtime-main.js": "/apple/static/js/runtime-main.ead73b5b.js",
-    "runtime-main.js.map": "/apple/static/js/runtime-main.ead73b5b.js.map",
-    "static/js/2.ad934c3a.chunk.js": "/apple/static/js/2.ad934c3a.chunk.js",
-    "static/js/2.ad934c3a.chunk.js.map": "/apple/static/js/2.ad934c3a.chunk.js.map",
-    "static/js/3.08e20b6c.chunk.js": "/apple/static/js/3.08e20b6c.chunk.js",
-    "static/js/3.08e20b6c.chunk.js.map": "/apple/static/js/3.08e20b6c.chunk.js.map",
+    "main.css": "/apple/static/css/main.6b32a1ea.chunk.css",
+    "main.js": "/apple/static/js/main.8d8c2a01.chunk.js",
+    "main.js.map": "/apple/static/js/main.8d8c2a01.chunk.js.map",
+    "runtime-main.js": "/apple/static/js/runtime-main.a6feb612.js",
+    "runtime-main.js.map": "/apple/static/js/runtime-main.a6feb612.js.map",
+    "static/js/2.1f5aa547.chunk.js": "/apple/static/js/2.1f5aa547.chunk.js",
+    "static/js/2.1f5aa547.chunk.js.map": "/apple/static/js/2.1f5aa547.chunk.js.map",
+    "static/js/3.88c88ee0.chunk.js": "/apple/static/js/3.88c88ee0.chunk.js",
+    "static/js/3.88c88ee0.chunk.js.map": "/apple/static/js/3.88c88ee0.chunk.js.map",
     "index.html": "/apple/index.html",
     "service-worker.js": "/apple/service-worker.js",
     "service-worker.js.map": "/apple/service-worker.js.map",
-    "static/css/main.82374798.chunk.css.map": "/apple/static/css/main.82374798.chunk.css.map",
-    "static/js/2.ad934c3a.chunk.js.LICENSE.txt": "/apple/static/js/2.ad934c3a.chunk.js.LICENSE.txt",
+    "static/css/main.6b32a1ea.chunk.css.map": "/apple/static/css/main.6b32a1ea.chunk.css.map",
+    "static/js/2.1f5aa547.chunk.js.LICENSE.txt": "/apple/static/js/2.1f5aa547.chunk.js.LICENSE.txt",
     "static/media/App.css": "/apple/static/media/macbook-1-desktop.1c60580b.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.ead73b5b.js",
-    "static/js/2.ad934c3a.chunk.js",
-    "static/css/main.82374798.chunk.css",
-    "static/js/main.63756543.chunk.js"
+    "static/js/runtime-main.a6feb612.js",
+    "static/js/2.1f5aa547.chunk.js",
+    "static/css/main.6b32a1ea.chunk.css",
+    "static/js/main.8d8c2a01.chunk.js"
   ]
 }
