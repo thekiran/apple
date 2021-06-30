@@ -1,54 +1,59 @@
 import React from 'react'
 
-const Section3 = () => {
+const Section3 = ({animation}) => {
   // React.useEffect(()=>{
+  //   if(props.animation){
+  //     console.log(props.animation)
   //     const section3Content = document.querySelector('.section-3-content')
-    
+      
   //     window.addEventListener('scroll', () => {
-  //           if(window.pageYOffset + window.innerHeight >= section3Content.offsetTop + section3Content.offsetHeight / 2) {
-  //                 section3Content.classList.add('change')
-  //             }
-  //         })
+  //       if(window.pageYOffset + window.innerHeight >= section3Content.offsetTop + section3Content.offsetHeight / 2) {
+  //         section3Content.classList.add('change')
+  //       }
+  //     })
+  //   }
   //       },[])
         
-        
-      let obs = ""
-          const observer = React.useRef(
-          new IntersectionObserver(
-            (entries) => {
+
+  
+  
+  let obs = ""
+  const observer = React.useRef(
+    new IntersectionObserver(
+      (entries) => {
+              if(animation){
               if (entries[0].isIntersecting) {
                 // console.log(entries[0])
                 document.querySelector('.section-3-content').classList.add('change')
                 setTimeout(()=>{
                   obs = "anim"
                   console.log(obs)
-                document.querySelector('.macbook-info').classList.add('anim')
+                  document.querySelector('.macbook-info').classList.add('anim')
                 },6000)
               } else {
                 document.querySelector('.section-3-content').classList.remove('change')
                 document.querySelector('.macbook-info').classList.remove('anim')
-               
                 // setTimeout(()=>{
-                //   obs = ""
-                //   console.log(obs)
-                // },100)
+                  //   obs = ""
+                  //   console.log(obs)
+                  // },100)
+                }}
+              },
+              {
+                // root: document.querySelector('.footer-space'),
+                rootMargin: '600px 0px 0px 0px',
+                // threshold: 1
               }
-            },
-            {
-            // root: document.querySelector('.footer-space'),
-              rootMargin: '600px 0px 0px 0px',
-              // threshold: 1
-            }
-          )
-        )
-   {/*  eslint-disable-next-line */}
-    const target = React.useCallback((node) => {
-      if(observer.current && node !== null)  observer.current.observe(node)
-    })
-
-
-    return (
-        <React.Fragment>
+              )
+              )
+              {/*  eslint-disable-next-line */}
+              const target = React.useCallback((node) => {
+                if(observer.current && node !== null)  observer.current.observe(node)
+              })
+              
+              
+              return (
+                <React.Fragment>
      {/* Section 3 */}
 <section className="section-3 center" id="section-3">
   {/* Section 3 Heading */}

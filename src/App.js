@@ -12,6 +12,7 @@ import Section5 from './components/Section5';
 import Section6 from './components/Section6';
 
 function App() {
+  const animation = true
   React.useEffect(() =>{
     // const script = document.createElement("script");
     // script.src = "/interactive.js";
@@ -28,12 +29,12 @@ function App() {
   gsap.registerPlugin(ScrollTrigger)
   return (
    <div className="container">
-     <Header />
-     <Section2 />
-     <Section3 />
-     <Section4 />
-     <Section5 />
-     <Section6 />
+     <Header animation={animation}/>
+     <Section2 animation={animation}/>
+     <Section3 animation={animation}/>
+     <Section4 animation={animation}/>
+     <Section5 animation={animation}/>
+     <Section6 animation={animation}/>
   </div>
   );
 }

@@ -1,31 +1,33 @@
 import React from 'react'
 import gsap from 'gsap'
 
-const Section2 = () => {
+const Section2 = ({animation}) => {
   React.useEffect(()=>{
-    const opacity = 0
+    if(animation){
 
-     let t1 = gsap.timeline({
-      scrollTrigger:{
-        trigger:'.section-2-heading',
-        start:"top center",
-        end:"+=300",
-        // markers:true,
-        scrub:true,
-        pin:false, 
-        pinSpacing:true
-      }
-    })
-    .from(".section-2-title",{xPercent:82,yPercent:-5,opacity:opacity,duration:1,
-  },1)
-    .from(".section-2-heading-bg",{xPercent:110,yPercent:-50,duration:1,scaleY:0.5,opacity:.5
-    } ,1)
-    .from("#iphone-full",{xPercent:-170,yPercent:-5,opacity:opacity,scale:0.5,rotate:'-0deg',duration:1.5,delay:.5},1)
-    .from(".iphone-description",{xPercent:50,yPercent:-0,opacity:opacity,scale:0.4,rotate:'-0deg',duration:1.5,delay:1.5},1)
+      const opacity = 0
+      gsap.timeline({
+        scrollTrigger:{
+          trigger:'.section-2-heading',
+          start:"top center",
+          end:"+=300",
+          // markers:true,
+          scrub:true,
+          pin:false, 
+          pinSpacing:true
+        }
+      })
+      .from(".section-2-title",{xPercent:82,yPercent:-5,opacity:opacity,duration:1,
+      },1)
+      .from(".section-2-heading-bg",{xPercent:110,yPercent:-50,duration:1,scaleY:0.5,opacity:.5
+      } ,1)
+      .from("#iphone-full",{xPercent:-170,yPercent:-5,opacity:opacity,scale:0.5,rotate:'-0deg',duration:1.5,delay:.5},1)
+      .from(".iphone-description",{xPercent:50,yPercent:-0,opacity:opacity,scale:0.4,rotate:'-0deg',duration:1.5,delay:1.5},1)
+    }
+      
+    },[])
     
-  },[])
-
-
+    
     return (
         <React.Fragment>
            {/* Section 2 */}

@@ -1,53 +1,112 @@
 import React from 'react'
 import { Link, animateScroll as scroll } from "react-scroll";
-// import gsap, { Bounce } from 'gsap'
+import gsap, { Bounce } from 'gsap'
 
-const Header = () => {
-  // React.useEffect(() => {
+const Header = ({animation}) => { 
+   React.useEffect(() => { 
+    if(animation){
+      // Setting up elements ready for animation
+      
+      gsap.set(".section-1", { background: '#000' })
+      gsap.set(".logo", { x: 600, y: 200, scale: 20 })
+      gsap.set(".controls", { opacity: 0, scale: 0, rotate: 180 })
+      gsap.set(".navbar-link", { opacity: 0, scale: 5, rotate: 180, y: 0 })
+      gsap.set(".title", { color: 'rgba(255,255,255,1)' })
+      gsap.set("#header-p", { opacity: 0 })
+      
+      
+      //Animation delays
+      const LogoDelay = 1
+      const CubeDelay = 3
+      const headDelay = 4
+      
+      //header background animation 
+      gsap.to(".section-1", { background: '#BEB1B1', duration: 2, delay: LogoDelay })
+      
+      
+      // logo Animation
+      
+      const tl = gsap.from(".logo", { duration: 1, rotate: 650, })
+      tl.repeat(1)
+      gsap.from(".logo i", { color: "#fff", duration: 2 })
+    gsap.to(".logo", { x: 0, y: 0, scale: 1, rotate: 0, duration: 2, delay: LogoDelay, ease: Bounce.easeInOut })
+    
+    
+    //Cube Animation
+    
+    gsap.from(".cube-wrapper", { scale: 0, duration: 2, delay: LogoDelay, ease: Bounce.easeInOut })
+    
+    gsap.to(".controls", { opacity: 1, scale: 1, duration: 1, delay: CubeDelay, rotate: 0 })
+    
+    //nav Animation
+    
+    gsap.to(".navbar-link", { y: 0, opacity: 1, scale: 1, duration: .25, delay: 2, rotate: 0, stagger: .1 })
+    
+    // Header Section
+    gsap.to(".title", { color: '#000', duration: 5, delay: LogoDelay })
+    gsap.to("#header-p", { opacity: 1, duration: 3, delay: headDelay })
+ 
+          
+      // Cube 
+      let x = 0
+      let y = 20
+      let z = 0
+      let bool = true
+      let interval;
 
-  //   // Setting up elements ready for animation
+      const cube = document.querySelector('.cube')
 
-  //   gsap.set(".section-1", { background: '#000' })
-  //   gsap.set(".logo", { x: 600, y: 200, scale: 20 })
-  //   gsap.set(".controls", { opacity: 0, scale: 0, rotate: 180 })
-  //   gsap.set(".navbar-link", { opacity: 0, scale: 5, rotate: 180, y: 0 })
-  //   gsap.set(".title", { color: 'rgba(255,255,255,1)' })
-  //   gsap.set("#header-p", { opacity: 0 })
+      document.querySelector('.top-x-control').addEventListener('click', () => {
+      cube.style.transform = `rotateX(${x += 20}deg) rotateY(${y}deg) rotateZ(${z}deg)`
+      })
 
+      document.querySelector('.bottom-x-control').addEventListener('click', () => {
+      cube.style.transform = `rotateX(${x -= 20}deg) rotateY(${y}deg) rotateZ(${z}deg)`
+      })
 
-  //   //Animation delays
-  //   const LogoDelay = 1
-  //   const CubeDelay = 3
-  //   const headDelay = 4
+      document.querySelector('.left-y-control').addEventListener('click', () => {
+      cube.style.transform = `rotateX(${x}deg) rotateY(${y -= 20}deg) rotateZ(${z}deg) `
+      })
 
-  //   //header background animation 
-  //   gsap.to(".section-1", { background: '#6edae6', duration: 2, delay: LogoDelay })
+      document.querySelector('.right-y-control').addEventListener('click', () => {
+      cube.style.transform = `rotateX(${x}deg) rotateY(${y += 20}deg) rotateZ(${z}deg) `
+      })
 
+      document.querySelector('.top-z-control').addEventListener('click', () => {
+      cube.style.transform = `rotateX(${x}deg) rotateY(${y}deg) rotateZ(${z -= 20}deg) `
+      })
 
-  //   // logo Animation
+      document.querySelector('.bottom-z-control').addEventListener('click', () => {
+      cube.style.transform = `rotateX(${x}deg) rotateY(${y}deg) rotateZ(${z += 20}deg) `
+      })
 
-  //   const tl = gsap.from(".logo", { duration: 1, rotate: 650, })
-  //   tl.repeat(1)
-  //   gsap.from(".logo i", { color: "#fff", duration: 2 })
-  //   gsap.to(".logo", { x: 0, y: 0, scale: 1, rotate: 0, duration: 2, delay: LogoDelay, ease: Bounce.easeInOut })
+      const playPause = () => {
+      if(bool) {
+          interval = setInterval(() => {
+              cube.style.transform = `rotateX(${x}deg) rotateY(${y++}deg) rotateZ(${z}deg)`
+          }, 100)
+      } else {
+          clearInterval(interval)
+      }
+      }
 
+      playPause()
 
-  //   //Cube Animation
+      document.querySelector('.controls').addEventListener('mouseover', () => {
+      bool = false
+      playPause()
+      })
 
-  //   gsap.from(".cube-wrapper", { scale: 0, duration: 2, delay: LogoDelay, ease: Bounce.easeInOut })
+      document.querySelector('.controls').addEventListener('mouseout', () => {
+      bool = true
+      playPause()
+      })
 
-  //   gsap.to(".controls", { opacity: 1, scale: 1, duration: 1, delay: CubeDelay, rotate: 0 })
+      // End of Cube 
 
-  //   //nav Animation
-
-  //   gsap.to(".navbar-link", { y: 0, opacity: 1, scale: 1, duration: .25, delay: 2, rotate: 0, stagger: .1 })
-
-  //   // Header Section
-  //   gsap.to(".title", { color: '#000', duration: 5, delay: LogoDelay })
-  //   gsap.to("#header-p", { opacity: 1, duration: 3, delay: headDelay })
-
-
-  // }, [])
+  }
+    
+  }, [])
 
 
   return (
@@ -87,7 +146,7 @@ const Header = () => {
             to="section-4"
             spy={true}
             smooth={true}
-            offset={-70}
+            offset={170}
             duration={500}
             className="navbar-link"
         > Watch</Link>
@@ -116,7 +175,7 @@ const Header = () => {
           </div>
           {/* Controls */}
 
-{/*           
+          
           <div className="controls">
             <a href="#" className="top-x-control">
               <i className="fas fa-arrow-up " />
@@ -138,7 +197,7 @@ const Header = () => {
             </a>
           </div>
          
-          */}
+         
           {/* End of Controls */}
         </div>
 
@@ -164,3 +223,70 @@ const Header = () => {
 }
 
 export default Header
+
+// React.useEffect(()=>{
+//   // Common JS
+// document.querySelectorAll('.watch-control, .controls a, .iphone-btn').forEach(control => {
+// control.addEventListener('click', e => {
+//     e.preventDefault()
+// })
+// })
+// // End of Common JS
+
+// // Cube 
+// let x = 0
+// let y = 20
+// let z = 0
+// let bool = true
+// let interval;
+
+// const cube = document.querySelector('.cube')
+
+// document.querySelector('.top-x-control').addEventListener('click', () => {
+// cube.style.transform = `rotateX(${x += 20}deg) rotateY(${y}deg) rotateZ(${z}deg)`
+// })
+
+// document.querySelector('.bottom-x-control').addEventListener('click', () => {
+// cube.style.transform = `rotateX(${x -= 20}deg) rotateY(${y}deg) rotateZ(${z}deg)`
+// })
+
+// document.querySelector('.left-y-control').addEventListener('click', () => {
+// cube.style.transform = `rotateX(${x}deg) rotateY(${y -= 20}deg) rotateZ(${z}deg) `
+// })
+
+// document.querySelector('.right-y-control').addEventListener('click', () => {
+// cube.style.transform = `rotateX(${x}deg) rotateY(${y += 20}deg) rotateZ(${z}deg) `
+// })
+
+// document.querySelector('.top-z-control').addEventListener('click', () => {
+// cube.style.transform = `rotateX(${x}deg) rotateY(${y}deg) rotateZ(${z -= 20}deg) `
+// })
+
+// document.querySelector('.bottom-z-control').addEventListener('click', () => {
+// cube.style.transform = `rotateX(${x}deg) rotateY(${y}deg) rotateZ(${z += 20}deg) `
+// })
+
+// const playPause = () => {
+// if(bool) {
+//     interval = setInterval(() => {
+//         cube.style.transform = `rotateX(${x}deg) rotateY(${y++}deg) rotateZ(${z}deg)`
+//     }, 100)
+// } else {
+//     clearInterval(interval)
+// }
+// }
+
+// playPause()
+
+// document.querySelector('.controls').addEventListener('mouseover', () => {
+// bool = false
+// playPause()
+// })
+
+// document.querySelector('.controls').addEventListener('mouseout', () => {
+// bool = true
+// playPause()
+// })
+
+// // End of Cube 
+// },[])

@@ -16,10 +16,11 @@ html {
   scroll-behavior: smooth;
 }
 
+/* --primary-color: #6edae6; */
 :root {
-  --primary-color: #6edae6;
-  --white-color: #fff;
-  --black-color: #000;
+  --primary-color: #BEB1B1;
+  --white-color: #D83131;
+  --black-color: rgba(3, 1, 1, 0.5);
 }
 
 .center {
@@ -181,18 +182,22 @@ html {
 /* Controls */
 .controls {
   position: absolute;
-  bottom: -11rem;
+  bottom: -19rem;
   left: 50%;
   transform: translateX(-50%);
-  width: 10rem;
-  height: 10rem;
+  width: 15rem;
+  height: 15rem;
   border-radius: 50%;
-  background-color: rgba(33, 36, 201, 0.9);
-  border: 1rem solid rgba(33, 36, 201, 0.9);
+  /* background-color: rgba(33, 36, 201, 0.9);
+  border: 1rem solid rgba(33, 36, 201, 0.9); */
+  background-color: rgba(156, 133, 133, 0.63);
+  border: 1rem solid rgba(156, 133, 133, 0.397);
 }
 
 .controls a {
   position: absolute;
+  /* color: red; */
+  /* background: #000; */
 }
 
 .controls a:nth-child(1) {
@@ -233,7 +238,7 @@ html {
 
 .controls i {
   font-size: 1.5rem;
-  color: var(--primary-color);
+  color: #fff;
   opacity: 0.5;
   transition: opacity 0.5s;
 }
@@ -584,7 +589,7 @@ display: flex;
 
 .loading i {
   font-size: 10rem;
-  color: var(--white-color);
+  color: #fff;
   margin-bottom: 2rem;
 }
 
@@ -781,6 +786,36 @@ display: flex;
   font-size: 1.6rem;
   font-weight: 200;
   cursor: pointer;
+}
+
+.watch-btn:hover{
+  transform: scale(2);
+  background: rgba(0, 0, 0, 0.1);
+  color: #000;
+  box-shadow: 0px 0px 40px 6px #000;
+  transition: all 500ms ease-in-out;
+  /* animation: skew 5s forwards; */
+}
+@keyframes skew {
+  0%{
+    /* transform: scale(.5) skew(-1.05turn);
+  }
+  25%{ */
+    transform: scale(1.5) 
+    /* skew(-.5turn); */
+  }
+  50%{
+    transform: scale(2.5) 
+    /* skew(1.00turn); */
+  }
+  75%{
+    transform: scale(2.5) 
+    /* skew(.5turn); */
+  }
+  100%{
+    transform: scale(2.5) 
+    /* skew(1.00turn); */
+  }
 }
 /* End of Watch Button */
 /* End of Section 4 */
